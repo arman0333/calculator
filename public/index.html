@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-slate-500">
+    <div class="items-center flex justify-center h-screen bg-black">
+        <div class=" bg-gray-600 py-8 pr-4 pl-20 rounded-md border-4 border-white items-center justify-center ">
+            <form >
+                <div class="text-end flex ">
+                    <input type="text" id="display" name="display" class="w-[60%] h-12 justify-end text-end text-2xl">
+                </div>
+                
+            </form>
+            <div class="mt-2 ">
+                <input type="button" value="AC" onclick="display.value='' " class="text-green-700">
+                <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0, -1)"class="text-green-700" >
+                <input type="button" value="." onclick="updateDisplay('.')" class="text-green-700">
+                <input type="button" value="/" onclick="updateDisplay('/')" class="text-green-700">
+            </div>
+            <div class="mt-2">
+                <input type="button" value="7" onclick="updateDisplay('7')">
+                <input type="button" value="8" onclick="updateDisplay('8')">
+                <input type="button" value="9" onclick="updateDisplay('9')">
+                <input type="button" value="*" onclick="updateDisplay('*')">
+            </div>
+            <div class="mt-2">
+                <input type="button" value="4" onclick="updateDisplay('4')">
+                <input type="button" value="5" onclick="updateDisplay('5')">
+                <input type="button" value="6" onclick="updateDisplay('6')">
+                <input type="button" value="-" onclick="updateDisplay('-')">
+            </div>
+            <div class="mt-2">
+                <input type="button" value="1" onclick="updateDisplay('1')">
+                <input type="button" value="2" onclick="updateDisplay('2')">
+                <input type="button" value="3" onclick="updateDisplay('3')">
+                <input type="button" value="+" onclick="updateDisplay('+')">
+            </div>
+            <div class="mt-2" id="last">
+                <input type="button" value="00" onclick="updateDisplay('00')">
+                <input type="button" value="0" onclick="updateDisplay('0')">
+                <input type="button" value="=" onclick="display.value = eval(display.value)" style="width: 30%;" class="px-4">
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+</body>
+</html>
